@@ -20,12 +20,12 @@
 import IndexedDBApi from '../api/indexed-db-api.js';
 
 class CacheableStorageAdapter {
-    constructor({ name }) {
+    constructor() {
 
         /**
          * @protected
          */
-         this.name = name ? name : undefined;
+         this.name = undefined;
 
         /**
          * @protected
