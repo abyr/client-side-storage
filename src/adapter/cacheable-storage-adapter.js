@@ -17,10 +17,7 @@
  * ```
  */
 
-import '../types.js';
-
 import IndexedDBApi from '../api/indexed-db-api.js';
-
 
 class CacheableStorageAdapter {
     constructor() {
