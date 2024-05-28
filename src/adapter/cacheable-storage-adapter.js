@@ -41,7 +41,7 @@ class CacheableStorageAdapter {
         this.idba = idba;
     }
 
-    _getDBApi() {
+    _getDBApi(dbSchema) {
         return new IndexedDBApi(dbSchema);
     }
 
