@@ -135,6 +135,24 @@ class CacheableStorageAdapter {
     }
 
     /**
+     * @param {Number} key
+     * @returns {Promise}
+     */
+    delete(key) {
+        return new Promise((resolve, reject) => {
+            this.invalidateCache();
+
+            this.idba.deleteRecord(this.name, key).then(() => {
+                resolve();
+
+            }).catch(err => {
+                console.error(err);
+                reject(err);
+            });
+        });
+    }
+
+    /**
      * @protected
      * @param {String} key
      * @returns {Object|undefined}
