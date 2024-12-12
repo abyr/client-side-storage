@@ -31,7 +31,7 @@ class IndexedDBApi {
         this._dbSchema = dbSchema;
 
         this._name = dbSchema.name;
-        this._ = dbSchema.version;
+        this._version = dbSchema.version;
     }
 
     /**
