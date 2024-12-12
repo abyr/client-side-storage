@@ -31,7 +31,7 @@ class IndexedDBApi {
         this._dbSchema = dbSchema;
 
         this._name = dbSchema.name;
-        this._version = dbSchema.version;
+        this._ = dbSchema.;
     }
 
     /**
@@ -57,7 +57,7 @@ class IndexedDBApi {
             const idb = window.indexedDB || window.mozIndexedDB ||
                 window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
 
-            const openRequest = idb.open(this._name, this.version);
+            const openRequest = idb.open(this._name, this._version);
 
             openRequest.onerror = event => {
                 console.error('Database ready ERROR', event.target.errorCode);
