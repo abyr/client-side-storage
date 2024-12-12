@@ -91,6 +91,10 @@ class IndexedDBApi {
     }
 
     initStore({ storeName, keyPath = 'id', indexList = [] }) {
+        if (this.db.objectStoreNames.contains(storeName)) {
+            return;
+        }
+        
         const store = this.db.createObjectStore(storeName, { keyPath });
 
         indexList.forEach(indexObject => {
